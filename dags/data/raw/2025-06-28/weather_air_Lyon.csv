@@ -1,0 +1,2 @@
+ville,date_extraction,date_observation,temperature,humidite,pression,vent_vitesse,vent_direction,conditions,aqi,co,no2,o3,pm2_5,pm10,so2
+Lyon,2025-06-28 22:31:53,2025-06-28 19:22:02,30.96,42,1022,5.14,350,ciel dégagé,1,95.79,1,58.3,1.14,1.57,0.13
