@@ -1,0 +1,2 @@
+ville,date_extraction,date_observation,temperature,humidite,pression,vent_vitesse,vent_direction,conditions,aqi,co,no2,o3,pm2_5,pm10,so2
+Nice,2025-06-29 15:37:08,2025-06-29 12:37:07,35.83,44,1019,2.11,119,ciel dégagé,2,127.62,0.54,98.91,13.01,17.47,1.21
