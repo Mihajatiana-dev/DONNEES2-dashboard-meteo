@@ -1,0 +1,6 @@
+ville,mois,saison,temperature_moyenne,temp_min,temp_max,precipitations_totales,vent_moyen,score_meteo_moyen,jours_recommandes,jours_ouvres_totaux,pourcentage_recommandé,classement
+Lyon,6,Été,28.2,28.2,28.2,12.3,1.9,40.0,0,1,0.0,5
+Marseille,6,Été,28.4,28.4,28.4,0.2,2.4,70.0,0,1,0.0,2
+Nice,6,Été,28.3,28.3,28.3,3.1,2.8,70.0,0,1,0.0,2
+Paris,6,Été,28.2,28.2,28.2,0.3,3.1,70.0,0,1,0.0,2
+Toulouse,6,Été,27.8,27.8,27.8,4.3,3.7,100.0,1,1,100.0,1

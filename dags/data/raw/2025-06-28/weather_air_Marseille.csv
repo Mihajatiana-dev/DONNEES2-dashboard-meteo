@@ -1,2 +1,0 @@
-ville,date_extraction,date_observation,temperature,humidite,pression,vent_vitesse,vent_direction,conditions,aqi,co,no2,o3,pm2_5,pm10,so2
-Marseille,2025-06-28 22:31:52,2025-06-28 19:23:00,30.32,37,1020,2.06,200,ciel dégagé,2,99.6,0.57,65.11,4.67,10.23,0.33
