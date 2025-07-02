@@ -1,0 +1,2 @@
+ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
+Nice,2025-07-02 10:53:25,2025-07-02 12:00:00,28.1,25.06,31.9,56,0.9,2.1,10.0,clear sky,24
