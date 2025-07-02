@@ -1,2 +1,2 @@
 ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
-Paris,2025-07-02 10:53:23,2025-07-02 12:00:00,22.9,16.36,28.98,39,0,3.3,10.0,clear sky,24
+Paris,2025-07-02 12:30:33,2025-07-02 12:00:00,22.8,15.16,30.27,38,0.1,3.2,10.0,clear sky,24
