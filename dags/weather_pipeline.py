@@ -5,7 +5,6 @@ from datetime import datetime, timedelta
 from scripts.extract import extract_weather_data, extract_historical_data
 from scripts.clean import clean_data
 from scripts.merge import merge_data
-from scripts.calculate_tourism import generate_recommendations
 
 BASE_PATH = "/home/mihajatiana/airflow/DONNEES2-dashboard-meteo/dags/data"
 
@@ -83,15 +82,9 @@ with DAG(
         execution_timeout=timedelta(minutes=20),
     )
 
-    tourism_task = PythonOperator(
-        task_id="generate_recommendations",
-        python_callable=generate_recommendations,
-        retries=1,
-    )
-
     # --- Workflows ---
     # Workflow standard (quotidien)
-    extract_tasks >> clean_task >> merge_task >> tourism_task
+    extract_tasks >> clean_task >> merge_task
 
     # Workflow historique (à déclencher manuellement une fois)
     extract_historical_task >> clean_historical_task
