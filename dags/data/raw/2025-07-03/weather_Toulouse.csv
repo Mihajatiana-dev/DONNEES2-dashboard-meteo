@@ -1,2 +1,2 @@
 ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
-Toulouse,2025-07-03 16:41:01,2025-07-03 12:00:00,24.9,16.01,35.12,59,5.0,4.0,10.0,broken clouds,24
+Toulouse,2025-07-03 19:30:50,2025-07-03 12:00:00,25.0,16.01,35.12,57,5.0,4.1,10.0,broken clouds,24
