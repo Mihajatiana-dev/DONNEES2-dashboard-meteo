@@ -7,6 +7,46 @@ import logging
 BASE_PATH = "/home/mihajatiana/airflow/DONNEES2-dashboard-meteo/dags/data"
 
 
+def extract_historical_data(output_path: str) -> bool:
+    """Convertit historical.csv vers le format brut des données récentes"""
+    try:
+        df = pd.read_csv(f"{BASE_PATH}/historical/historical.csv")
+
+        # Conversion des colonnes historiques -> format récent
+        df_converted = pd.DataFrame(
+            {
+                "ville": df["name"],
+                "date_extraction": datetime.now().strftime(
+                    "%Y-%m-%d %H:%M:%S"
+                ),  # Date de conversion
+                "date_observation": pd.to_datetime(df["datetime"])
+                + pd.Timedelta(hours=12),  # Ajout de l'heure
+                "temperature_moy": df["temp"],  # temp = moyenne dans l'historique
+                "temp_min": df["tempmin"],
+                "temp_max": df["tempmax"],
+                "humidite_moy": df["humidity"]
+                .round()
+                .astype(int),  # Arrondi à l'entier
+                "precipitation": df["precip"],  # Déjà en mm
+                "vent_moyen": df["windspeed"],  # Déjà en km/h
+                "visibilite_moy": df["visibility"],  # Déjà en km
+                "conditions": df["conditions"]
+                .str.split(",")
+                .str[0],  # "Partially cloudy" -> "Partially cloudy"
+                "nb_intervalles": 24,  # Valeur par défaut pour l'historique
+            }
+        )
+
+        # Sauvegarde dans un seul fichier (pas de sous-dossiers par date)
+        df_converted.to_csv(output_path, index=False)
+        logging.info(f"Données historiques converties sauvegardées dans {output_path}")
+        return True
+
+    except Exception as e:
+        logging.error(f"Erreur conversion historique : {str(e)}", exc_info=True)
+        return False
+
+
 def extract_weather_data(city: str, api_key: str, date: str) -> bool:
     """
     Extrait les données météo pour une ville (version tourisme améliorée)

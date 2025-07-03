@@ -4,56 +4,74 @@ import os
 BASE_PATH = "/home/mihajatiana/airflow/DONNEES2-dashboard-meteo/dags/data"
 
 
-def clean_data(date: str) -> str:
+def clean_data(date: str, is_historical: bool = False) -> str:
     """
-    Nettoie et enrichit les données pour l'analyse touristique (version compatible forecast)
-
-    Modifications clés :
-    - Adaptation aux nouveaux noms de colonnes (temperature_moy, vent_moyen, etc.)
-    - Suppression des conversions redondantes
-    - Calcul cohérent des indicateurs touristiques
+    Nettoie et enrichit les données pour l'analyse touristique.
+    Mode historique (is_historical=True) ou données récentes (is_historical=False).
     """
+    if is_historical:
+        # Mode historique - Traitement du fichier unique
+        input_path = f"{BASE_PATH}/historical/historical_raw.csv"
+        output_path = f"{BASE_PATH}/historical/historical_cleaned.csv"
 
-    input_dir = f"{BASE_PATH}/raw/{date}"
-    output_dir = f"{BASE_PATH}/processed"
-    os.makedirs(output_dir, exist_ok=True)
+        # Chargement
+        try:
+            combined_df = pd.read_csv(input_path)
+            # Vérification des colonnes requises
+            required_columns = {
+                "ville",
+                "date_observation",
+                "temperature_moy",
+                "precipitation",
+                "vent_moyen",
+            }
+            if not required_columns.issubset(combined_df.columns):
+                raise ValueError("Colonnes manquantes dans le fichier historique")
 
-    # 1. Chargement des fichiers
-    all_data = []
-    for file in os.listdir(input_dir):
-        if file.startswith("weather_") and file.endswith(".csv"):
-            try:
-                df = pd.read_csv(f"{input_dir}/{file}")
-                # Vérification des colonnes requises
-                required_columns = {
-                    "ville",
-                    "date_observation",
-                    "temperature_moy",
-                    "precipitation",
-                    "vent_moyen",
-                }
-                if not required_columns.issubset(df.columns):
-                    raise ValueError(f"Colonnes manquantes dans {file}")
-                all_data.append(df)
-            except Exception as e:
-                print(f"Erreur lecture {file}: {str(e)}")
-                continue
+        except Exception as e:
+            print(f"Erreur lecture historique : {str(e)}")
+            raise
+    else:
+        # Mode données récentes - Traitement normal (inchangé)
+        input_dir = f"{BASE_PATH}/raw/{date}"
+        output_dir = f"{BASE_PATH}/processed"
+        os.makedirs(output_dir, exist_ok=True)
 
-    if not all_data:
-        raise ValueError(f"Aucune donnée valide à nettoyer pour {date}")
+        # 1. Chargement des fichiers par ville
+        all_data = []
+        for file in os.listdir(input_dir):
+            if file.startswith("weather_") and file.endswith(".csv"):
+                try:
+                    df = pd.read_csv(f"{input_dir}/{file}")
+                    required_columns = {
+                        "ville",
+                        "date_observation",
+                        "temperature_moy",
+                        "precipitation",
+                        "vent_moyen",
+                    }
+                    if not required_columns.issubset(df.columns):
+                        raise ValueError(f"Colonnes manquantes dans {file}")
+                    all_data.append(df)
+                except Exception as e:
+                    print(f"Erreur lecture {file}: {str(e)}")
+                    continue
 
-    combined_df = pd.concat(all_data, ignore_index=True)
+        if not all_data:
+            raise ValueError(f"Aucune donnée valide à nettoyer pour {date}")
 
-    # 2. Conversion des dates (optimisé)
+        combined_df = pd.concat(all_data, ignore_index=True)
+        output_path = f"{output_dir}/cleaned_weather_{date}.csv"
+
+    # --- Partie commune de nettoyage ---
+    # 2. Conversion des dates
     date_columns = ["date_extraction", "date_observation"]
     for col in date_columns:
         if col in combined_df.columns:
             combined_df[col] = pd.to_datetime(combined_df[col], errors="coerce")
 
     # 3. Nettoyage des données
-    combined_df = combined_df.dropna(
-        subset=["date_observation"]
-    )  # Supprime les lignes sans date valide
+    combined_df = combined_df.dropna(subset=["date_observation"])
 
     # 4. Calcul des indicateurs temporels
     combined_df["annee"] = combined_df["date_observation"].dt.year
@@ -71,7 +89,7 @@ def clean_data(date: str) -> str:
         )
     )
 
-    # 5. Calcul des indicateurs touristiques (adapté aux nouvelles colonnes)
+    # 5. Calcul des indicateurs touristiques
     combined_df["temp_ideale"] = combined_df["temperature_moy"].between(22, 28)
     combined_df["peu_vent"] = combined_df["vent_moyen"] < 15
     combined_df["peu_pluie"] = combined_df["precipitation"] < 5  # Seuil à 5mm/jour
@@ -115,13 +133,10 @@ def clean_data(date: str) -> str:
         "score_meteo",
         "periode_recommandee",
     ]
-
     combined_df = combined_df[output_columns]
 
     # 7. Sauvegarde
-    output_path = f"{output_dir}/cleaned_weather_{date}.csv"
     combined_df.to_csv(output_path, index=False)
-
     print(f"Fichier nettoyé généré : {output_path}")
     print(
         f"Statistiques : {combined_df[['precipitation', 'periode_recommandee']].describe()}"
