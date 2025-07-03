@@ -90,8 +90,8 @@ def clean_data(date: str, is_historical: bool = False) -> str:
     )
 
     # 5. Calcul des indicateurs touristiques
-    combined_df["temp_ideale"] = combined_df["temperature_moy"].between(22, 28)
-    combined_df["peu_vent"] = combined_df["vent_moyen"] < 15
+    combined_df["temp_ideale"] = combined_df["temperature_moy"].between(20, 30)
+    combined_df["peu_vent"] = combined_df["vent_moyen"] < 20
     combined_df["peu_pluie"] = combined_df["precipitation"] < 5  # Seuil à 5mm/jour
     combined_df["bonne_visibilite"] = combined_df["visibilite_moy"] > 5
 
