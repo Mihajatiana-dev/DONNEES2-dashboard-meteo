@@ -2,7 +2,7 @@ import pandas as pd
 import glob
 
 # 1. Récupérer tous les fichiers CSV dans le dossier fichiers_csv
-files = glob.glob("historical_datas/*.csv")
+files = glob.glob("historical_data/*.csv")
 
 # 2. Lire tous les fichiers et les stocker dans une liste
 dfs = []
