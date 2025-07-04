@@ -1,2 +1,2 @@
 ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
-Toulouse,2025-07-04 09:50:02,2025-07-04 12:00:00,25.0,16.69,34.67,50,0.1,4.7,10.0,few clouds,24
+Toulouse,2025-07-04 10:31:47,2025-07-04 12:00:00,24.6,17.57,34.64,53,0.4,4.7,10.0,scattered clouds,24
