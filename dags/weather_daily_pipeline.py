@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from scripts.extract import extract_weather_data
 from scripts.clean import clean_data
 from scripts.merge import merge_data
+from scripts.transform import generate_star_schema
 
 BASE_PATH = "/home/mihajatiana/airflow/DONNEES2-dashboard-meteo/dags/data"
 
@@ -64,7 +65,14 @@ with DAG(
         execution_timeout=timedelta(minutes=20),
     )
 
-    extract_tasks >> clean_task >> merge_task
+    transform_task = PythonOperator(
+        task_id="generate_star_schema",
+        python_callable=generate_star_schema,
+        execution_timeout=timedelta(minutes=15),
+        dag=dag,
+    )
+
+    extract_tasks >> clean_task >> merge_task >> transform_task
 
     dag.doc_md = """
     ## Pipeline Météo Quotidien
