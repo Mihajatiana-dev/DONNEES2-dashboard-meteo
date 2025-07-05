@@ -18,7 +18,7 @@ def generate_star_schema():
     """Transforme historical_weather.csv en modèle en étoile simplifié"""
     # Chemins des fichiers
     input_file = f"{BASE_PATH}/final/historical_weather.csv"
-    output_dir = f"{BASE_PATH}/star_schema"
+    output_dir = f"{BASE_PATH}/final/star_schema"
     metadata_file = f"{output_dir}/_metadata.json"
     os.makedirs(output_dir, exist_ok=True)
 
