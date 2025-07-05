@@ -10064,3 +10064,13 @@ city_id,date_id,condition_id,avg_temp,min_temp,max_temp,humidity,precipitation,w
 5,2012,8,28.2,23.42,31.95,46,0.0,6.0,10.0,True,True,True,True,100,True
 3,2012,6,24.6,17.27,34.93,51,3.1,5.2,10.0,True,True,True,True,100,True
 2,2012,8,22.9,15.79,32.32,39,2.7,2.4,10.0,True,True,True,True,100,True
+2,2012,8,22.9,15.79,32.32,39,2.7,2.4,10.0,True,True,True,True,100,True
+1,2012,8,27.8,23.36,33.32,58,0.7,3.4,10.0,True,True,True,True,100,True
+4,2012,8,19.6,14.42,29.51,58,13.2,3.2,9.6,False,True,False,True,40,False
+5,2012,8,28.2,23.42,31.95,46,0.0,6.0,10.0,True,True,True,True,100,True
+3,2012,6,24.6,17.27,34.93,51,3.1,5.2,10.0,True,True,True,True,100,True
+3,2013,10,22.2,13.78,34.55,52,1.5,5.1,10.0,True,True,True,True,100,True
+1,2013,10,27.1,22.01,32.38,52,0.4,3.5,10.0,True,True,True,True,100,True
+4,2013,10,18.2,14.86,28.81,65,15.7,3.5,9.9,False,True,False,True,40,False
+5,2013,8,27.1,19.57,31.26,47,0.0,8.7,10.0,True,True,True,True,100,True
+2,2013,8,21.0,12.97,31.63,49,1.7,2.3,10.0,True,True,True,True,100,True
