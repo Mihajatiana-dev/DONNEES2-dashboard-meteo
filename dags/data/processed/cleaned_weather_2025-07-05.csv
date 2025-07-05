@@ -1,6 +1,6 @@
 ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,annee,mois,jour,saison,temp_ideale,peu_vent,peu_pluie,bonne_visibilite,score_meteo,periode_recommandee
-Paris,2025-07-05 09:33:07,2025-07-05 12:00:00,18.2,14.86,28.81,65,15.7,3.5,9.9,scattered clouds,2025,7,5,Été,False,True,False,True,40,False
-Marseille,2025-07-05 09:33:07,2025-07-05 12:00:00,27.1,19.57,31.26,47,0.0,8.7,10.0,clear sky,2025,7,5,Été,True,True,True,True,100,True
-Toulouse,2025-07-05 09:33:08,2025-07-05 12:00:00,22.2,13.78,34.55,52,1.5,5.1,10.0,scattered clouds,2025,7,5,Été,True,True,True,True,100,True
-Nice,2025-07-05 09:33:08,2025-07-05 12:00:00,27.1,22.01,32.38,52,0.4,3.5,10.0,scattered clouds,2025,7,5,Été,True,True,True,True,100,True
-Lyon,2025-07-05 09:33:06,2025-07-05 12:00:00,21.0,12.97,31.63,49,1.7,2.3,10.0,clear sky,2025,7,5,Été,True,True,True,True,100,True
+Paris,2025-07-05 22:43:16,2025-07-05 12:00:00,17.7,12.9,23.74,65,17.2,4.0,9.7,clear sky,2025,7,5,Été,False,True,False,True,40,False
+Marseille,2025-07-05 22:43:16,2025-07-05 12:00:00,25.7,19.47,29.58,45,0.0,10.4,10.0,clear sky,2025,7,5,Été,True,True,True,True,100,True
+Toulouse,2025-07-05 22:43:19,2025-07-05 12:00:00,21.7,13.5,28.15,53,1.8,5.1,10.0,clear sky,2025,7,5,Été,True,True,True,True,100,True
+Nice,2025-07-05 22:43:18,2025-07-05 12:00:00,26.5,21.54,31.54,49,2.0,3.8,10.0,clear sky,2025,7,5,Été,True,True,True,True,100,True
+Lyon,2025-07-05 22:43:16,2025-07-05 12:00:00,19.7,12.99,27.42,54,3.3,2.7,10.0,clear sky,2025,7,5,Été,False,True,True,True,70,False
