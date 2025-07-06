@@ -1,0 +1,2 @@
+ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
+Toulouse,2025-07-06 10:36:20,2025-07-06 12:00:00,19.8,13.45,27.78,58,1.2,4.6,10.0,clear sky,24
