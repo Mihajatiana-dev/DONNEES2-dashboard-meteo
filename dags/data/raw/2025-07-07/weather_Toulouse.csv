@@ -1,0 +1,2 @@
+ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
+Toulouse,2025-07-07 21:16:36,2025-07-07 12:00:00,22.8,13.29,33.95,38,0.3,3.3,10.0,light rain,24
