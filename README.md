@@ -41,3 +41,9 @@
 ---- /README.md
 
 ### DAG Airflow :
+
+### EDA
+
+### DIAGRAM
+
+### DASHBOARD
