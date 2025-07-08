@@ -1,0 +1,6 @@
+ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,annee,mois,jour,saison,temp_ideale,peu_vent,peu_pluie,bonne_visibilite,score_meteo,periode_recommandee
+Paris,2025-07-08 20:40:08,2025-07-08 12:00:00,22.5,14.73,30.33,42,0.0,2.2,10.0,clear sky,2025,7,8,Été,True,True,True,True,100,True
+Marseille,2025-07-08 20:40:08,2025-07-08 12:00:00,24.0,19.61,26.06,50,0.0,4.8,10.0,clear sky,2025,7,8,Été,True,True,True,True,100,True
+Toulouse,2025-07-08 20:40:10,2025-07-08 12:00:00,25.3,15.26,36.85,30,0.0,2.5,10.0,few clouds,2025,7,8,Été,True,True,True,True,100,True
+Nice,2025-07-08 20:40:10,2025-07-08 12:00:00,24.0,20.44,27.98,51,0.2,2.4,10.0,clear sky,2025,7,8,Été,True,True,True,True,100,True
+Lyon,2025-07-08 20:40:08,2025-07-08 12:00:00,21.0,12.64,30.54,45,0.0,3.1,10.0,clear sky,2025,7,8,Été,True,True,True,True,100,True
