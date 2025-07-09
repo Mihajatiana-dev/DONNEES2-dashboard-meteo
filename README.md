@@ -49,11 +49,11 @@ weather_historical_init ➝ weather_daily_pipeline
 
 <img src="./images/weather_diagram.png" alt="Diagram - Start schema" width="600"/>
 
-- La table de faits : fact_weather
+- La table de faits : **fact_weather**
 - Les dimensions :
-  - dim_city : contient les villes
-  - dim_date : contient les dates
-  - dim_conditions : contient les types de conditions météorologiques
+  - **dim_city** : contient les villes
+  - **dim_date** : contient les dates
+  - **dim_conditions** : contient les types de conditions météorologiques
  
 ---
 
@@ -76,7 +76,7 @@ Visualisations graphiques des données finales :
 
 ## DASHBOARD
 
-Previews :
+#### **Previews** :
 
 <img src="./images/weather_dashboard1.png" alt="Dashboard - Introduction" width="600"/>
 
