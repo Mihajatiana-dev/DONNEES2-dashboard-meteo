@@ -10124,3 +10124,13 @@ city_id,date_id,condition_id,avg_temp,min_temp,max_temp,humidity,precipitation,w
 2,2017,1,24.4,14.17,31.25,42,0.0,2.6,10.0,True,True,True,True,100,True
 5,2017,1,24.2,19.17,26.42,62,0.2,3.0,10.0,True,True,True,True,100,True
 4,2017,1,23.0,13.28,31.39,44,0.0,2.8,10.0,True,True,True,True,100,True
+4,2017,1,23.0,13.28,31.39,44,0.0,2.8,10.0,True,True,True,True,100,True
+5,2017,1,24.2,19.17,26.42,62,0.2,3.0,10.0,True,True,True,True,100,True
+3,2017,1,24.1,20.84,26.14,55,0.0,2.3,10.0,True,True,True,True,100,True
+1,2017,1,27.2,18.2,37.43,32,0.1,2.7,10.0,True,True,True,True,100,True
+2,2017,1,24.4,14.17,31.25,42,0.0,2.6,10.0,True,True,True,True,100,True
+3,2018,1,23.9,20.64,27.12,61,0.4,2.4,10.0,True,True,True,True,100,True
+2,2018,1,25.3,16.28,32.57,42,0.0,2.7,10.0,True,True,True,True,100,True
+5,2018,1,23.5,16.83,25.12,68,0.2,3.0,10.0,True,True,True,True,100,True
+1,2018,4,25.4,16.4,36.93,51,8.9,2.5,10.0,True,True,False,True,70,False
+4,2018,1,24.3,14.89,32.57,49,2.3,2.2,10.0,True,True,True,True,100,True
