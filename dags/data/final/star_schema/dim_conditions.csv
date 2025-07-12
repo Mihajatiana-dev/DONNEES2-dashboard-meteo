@@ -9,3 +9,5 @@ condition_id,condition_name
 8,Rain
 9,Partially cloudy
 10,moderate rain
+11,heavy intensity rain
+12,scattered clouds

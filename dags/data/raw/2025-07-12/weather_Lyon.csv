@@ -1,0 +1,2 @@
+ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
+Lyon,2025-07-12 21:43:01,2025-07-12 12:00:00,25.1,19.24,32.98,57,6.0,2.1,9.7,light rain,24
