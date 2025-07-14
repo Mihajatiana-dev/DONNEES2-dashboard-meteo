@@ -6,7 +6,7 @@
 
 ## Project Structure
 
-photo-structure
+<img src="./images/project_structure.png" alt="Project structure" width="1000"/>
 
 ---
 
@@ -15,6 +15,7 @@ photo-structure
 #### Mode de fonctionnement :
 
 1. S’assurer d’avoir toutes les dépendances nécessaires.
+
 2. Lancer le DAG avec les commandes suivantes :
    ```bash
    airflow api-server
@@ -26,17 +27,20 @@ photo-structure
 - Nettoie les données pour les rendre prêtes à la fusion (historical/historical_cleaned)
 - À activer manuellement pour les prochaines exécutions
 
-4.Activer weather_daily_pipeline :
+
+4. Activer weather_daily_pipeline :
 - Récupère les données du jour(source : openweathermap.org)
 - Fusionne les données récentes (/processed) avec les données historiques nettoyées (historical/historical_cleaned)
 - Génère le fichier /final/historical_weather.csv
 - Crée le modèle en étoile dans /final/star_schema
   
+
 5. Attention aux modifications :
 - Si les fichiers historical.csv, /raw/ ou /processed/ sont modifiés, il faut :
-  - Supprimer historical_weather.csv
-  - Supprimer tous les fichiers dans /star_schema
+  - Supprimer historical_weather.csv(données finales)
+  - Supprimer tous les fichiers dans /star_schema(données finales)
   - Relancer weather_historical_init puis weather_daily_pipeline
+
 
 6- Ordre de mise à jour recommandé :
 weather_historical_init ➝ weather_daily_pipeline
@@ -47,7 +51,7 @@ weather_historical_init ➝ weather_daily_pipeline
 
 #### **Schéma du modèle en étoile**
 
-<img src="./images/weather_diagram.png" alt="Diagram - Start schema" width="600"/>
+<img src="./images/weather_diagram.png" alt="Diagram - Start schema" width="1000"/>
 
 - La table de faits : **fact_weather**
 - Les dimensions :
@@ -58,19 +62,20 @@ weather_historical_init ➝ weather_daily_pipeline
 ---
 
 ## EDA
-**init_EDA.ipynb**
+**init_EDA.ipynb** : analyse exploratoire avant traitement des données
 
-Analyse exploratoire avant traitement des données :
-- Nombre de lignes et de colonnes
-- Colonnes présentes
-- Détection de potentielles anomalies (température, etc.)
+Elle m'a permis de :
+- comprendre la structre des données
+- identifier des tendances et anomalies
+- prendre des décisions pour le pré-traitement
 
-**final_EDA.ipynb**
 
-Analyse exploratoire après traitement :
+**final_EDA.ipynb** : analyse exploratoire après traitement des données
 
-Visualisations graphiques des données finales :
-- 
+Elle m'a permis de : 
+- valider la qualité des données traitées
+- identifier les meilleures périodes touristiques
+- générer des insights actionnables
 
 ---
 
@@ -78,6 +83,6 @@ Visualisations graphiques des données finales :
 
 #### **Previews** :
 
-<img src="./images/weather_dashboard1.png" alt="Dashboard - Introduction" width="600"/>
+<img src="./images/weather_dashboard1.png" alt="Dashboard - Introduction" width="1000"/>
 
-<img src="./images/weather_dashboard2.png" alt="Dashboard - Content" width="600"/>
+<img src="./images/weather_dashboard2.png" alt="Dashboard - Content" width="1000"/>
