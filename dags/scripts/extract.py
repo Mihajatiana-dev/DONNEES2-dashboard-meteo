@@ -24,12 +24,10 @@ def extract_historical_data(output_path: str) -> bool:
                 "temperature_moy": df["temp"],  # temp = moyenne dans l'historique
                 "temp_min": df["tempmin"],
                 "temp_max": df["tempmax"],
-                "humidite_moy": df["humidity"]
-                .round()
-                .astype(int),  # Arrondi à l'entier
-                "precipitation": df["precip"],  # Déjà en mm
-                "vent_moyen": df["windspeed"],  # Déjà en km/h
-                "visibilite_moy": df["visibility"],  # Déjà en km
+                "humidite_moy": df["humidity"].round().astype(int),
+                "precipitation": df["precip"],  # en mm
+                "vent_moyen": df["windspeed"],  # en km/h
+                "visibilite_moy": df["visibility"],  # en km
                 "conditions": df["conditions"]
                 .str.split(",")
                 .str[0],  # "Partially cloudy" -> "Partially cloudy"
@@ -49,12 +47,11 @@ def extract_historical_data(output_path: str) -> bool:
 
 def extract_weather_data(city: str, api_key: str, date: str) -> bool:
     """
-    Extrait les données météo pour une ville (version tourisme améliorée)
+    Extrait les données météo pour une ville
 
-    Nouveautés :
-    - Utilise l'API Forecast pour des prévisions sur 24h
-    - Calcule les cumuls de précipitations journalières
-    - Récupère les températures min/max/moyenne sur 24h
+    - Utilisation de l'API Forecast pour des prévisions sur 24h
+    - Calcul des cumuls de précipitations journalières
+    - Récupération des températures min/max/moyenne sur 24h
 
     Args:
         city (str): Nom de la ville
@@ -65,7 +62,7 @@ def extract_weather_data(city: str, api_key: str, date: str) -> bool:
         bool: True si succès, False sinon
     """
     try:
-        # 1. Récupération des coordonnées (inchangé)
+        # 1. Récupération des coordonnées
         geo_url = "http://api.openweathermap.org/geo/1.0/direct"
         geo_params = {"q": city, "limit": 1, "appid": api_key}
         geo_response = requests.get(geo_url, params=geo_params, timeout=10)
@@ -73,7 +70,7 @@ def extract_weather_data(city: str, api_key: str, date: str) -> bool:
         geo_data = geo_response.json()[0]
         lat, lon = geo_data["lat"], geo_data["lon"]
 
-        # 2. Appel à l'API Forecast (nouveau)
+        # 2. Appel à l'API Forecast
         forecast_url = "http://api.openweathermap.org/data/2.5/forecast"
         forecast_params = {
             "lat": lat,
@@ -88,7 +85,7 @@ def extract_weather_data(city: str, api_key: str, date: str) -> bool:
         forecast_response.raise_for_status()
         forecast_data = forecast_response.json()
 
-        # 3. Calcul des indicateurs sur 24h (nouveau)
+        # 3. Calcul des indicateurs sur 24h
         precipitations = []
         temperatures = []
         humidites = []
