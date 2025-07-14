@@ -45,7 +45,7 @@ def generate_star_schema():
         logging.error(f"Erreur de chargement : {str(e)}")
         raise
 
-    # 2. Gestion incrémentale (inchangée)
+    # 2. Gestion incrémentale
     try:
         with open(metadata_file) as f:
             metadata = json.load(f)
@@ -59,7 +59,7 @@ def generate_star_schema():
         logging.info("Aucune nouvelle donnée à transformer")
         return
 
-    # 3. Dimension Ville (simplifiée)
+    # 3. Dimension Ville
     dim_city_path = f"{output_dir}/dim_city.csv"
     if os.path.exists(dim_city_path):
         dim_city = pd.read_csv(
@@ -81,7 +81,7 @@ def generate_star_schema():
         dim_city = pd.concat([dim_city, new_city_df], ignore_index=True)
         dim_city.to_csv(dim_city_path, index=False)
 
-    # 4. Dimension Date (optimisée)
+    # 4. Dimension Date
     dim_date_path = f"{output_dir}/dim_date.csv"
     date_cols = ["date_id", "full_date", "year", "month", "day", "season"]
 
