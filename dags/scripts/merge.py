@@ -9,7 +9,7 @@ BASE_PATH = "/home/mihajatiana/airflow/DONNEES2-dashboard-meteo/dags/data"
 
 def merge_data(date: str) -> str:
     """
-    Fusionne les données selon l'approche optimisée :
+    Fusionne les données selon l'approche suivante :
     - Si historical_weather.csv n'existe pas : merge TOUS les fichiers cleaned + historical_cleaned.csv
     - S'il existe : merge uniquement le fichier du jour
     """
