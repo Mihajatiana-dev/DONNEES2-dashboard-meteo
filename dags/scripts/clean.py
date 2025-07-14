@@ -32,7 +32,7 @@ def clean_data(date: str, is_historical: bool = False) -> str:
             print(f"Erreur lecture historique : {str(e)}")
             raise
     else:
-        # Mode données récentes - Traitement normal (inchangé)
+        # Mode données récentes - Traitement normal
         input_dir = f"{BASE_PATH}/raw/{date}"
         output_dir = f"{BASE_PATH}/processed"
         os.makedirs(output_dir, exist_ok=True)
