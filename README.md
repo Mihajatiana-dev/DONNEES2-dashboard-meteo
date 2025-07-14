@@ -62,19 +62,20 @@ weather_historical_init ➝ weather_daily_pipeline
 ---
 
 ## EDA
-**init_EDA.ipynb**
+**init_EDA.ipynb** : analyse exploratoire avant traitement des données
 
-Analyse exploratoire avant traitement des données :
-- Nombre de lignes et de colonnes
-- Colonnes présentes
-- Détection de potentielles anomalies (température, etc.)
+Elle m'a permis de :
+- comprendre la structre des données
+- identifier des tendances et anomalies
+- prendre des décisions pour le pré-traitement
 
-**final_EDA.ipynb**
 
-Analyse exploratoire après traitement :
+**final_EDA.ipynb** : analyse exploratoire après traitement des données
 
-Visualisations graphiques des données finales :
-- 
+Elle m'a permis de : 
+- valider la qualité des données traitées
+- identifier les meilleures périodes touristiques
+- générer des insights actionnables
 
 ---
 
