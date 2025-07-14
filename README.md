@@ -51,7 +51,7 @@ weather_historical_init ➝ weather_daily_pipeline
 
 #### **Schéma du modèle en étoile**
 
-<img src="./images/weather_diagram.png" alt="Diagram - Start schema" width="600"/>
+<img src="./images/weather_diagram.png" alt="Diagram - Start schema" width="1000"/>
 
 - La table de faits : **fact_weather**
 - Les dimensions :
@@ -83,6 +83,6 @@ Elle m'a permis de :
 
 #### **Previews** :
 
-<img src="./images/weather_dashboard1.png" alt="Dashboard - Introduction" width="600"/>
+<img src="./images/weather_dashboard1.png" alt="Dashboard - Introduction" width="1000"/>
 
-<img src="./images/weather_dashboard2.png" alt="Dashboard - Content" width="600"/>
+<img src="./images/weather_dashboard2.png" alt="Dashboard - Content" width="1000"/>
