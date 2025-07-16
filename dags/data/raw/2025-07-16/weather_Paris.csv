@@ -1,0 +1,2 @@
+ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
+Paris,2025-07-16 22:19:35,2025-07-16 12:00:00,24.4,17.12,33.54,59,1.2,2.2,10.0,broken clouds,24

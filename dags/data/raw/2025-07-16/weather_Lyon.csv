@@ -1,0 +1,2 @@
+ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
+Lyon,2025-07-16 22:19:35,2025-07-16 12:00:00,25.7,18.8,33.06,47,2.7,2.3,10.0,scattered clouds,24
