@@ -1,0 +1,2 @@
+ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
+Marseille,2025-07-17 21:21:55,2025-07-17 12:00:00,25.3,23.72,31.09,66,0,3.9,9.4,few clouds,24
