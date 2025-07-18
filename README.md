@@ -12,82 +12,85 @@
 
 ## DAG Airflow
 
-#### Mode de fonctionnement :
+#### Operating mode:
 
-1. S’assurer d’avoir toutes les dépendances nécessaires.
+1. Make sure you have all the necessary dependencies.
 
-2. Lancer le DAG avec les commandes suivantes :
+2. Run DAG with the following commands:
    ```bash
    airflow api-server
    airflow scheduler
    airflow dag-processor
 
-3. Activer weather_historical_init:
-- Extrait les données historiques de 2020-01-01 à 2025-06-29 (source : visualcrossing.com)
-- Nettoie les données pour les rendre prêtes à la fusion (historical/historical_cleaned)
-- À activer manuellement pour les prochaines exécutions
+3. Activate weather_historical_init:
+- Extracts historical data from 2020-01-01 to 2025-06-29 (source: visualcrossing.com)
+- Cleans data to make it ready for merging (historical/historical_cleaned)
+- To be activated manually for future runs
 
 
-4. Activer weather_daily_pipeline :
-- Récupère les données du jour(source : openweathermap.org)
-- Fusionne les données récentes (/processed) avec les données historiques nettoyées (historical/historical_cleaned)
-- Génère le fichier /final/historical_weather.csv
-- Crée le modèle en étoile dans /final/star_schema
+4. Activate weather_daily_pipeline:
+- Retrieves daily data (source: openweathermap.org)
+- Merges recent data (/processed) with cleaned historical data (historical/historical_cleaned)
+- Generates file /final/historical_weather.csv
+- Creates star model in /final/star_schema
   
 
-5. Attention aux modifications :
-- Si les fichiers historical.csv, /raw/ ou /processed/ sont modifiés, il faut :
-  - Supprimer historical_weather.csv(données finales)
-  - Supprimer tous les fichiers dans /star_schema(données finales)
-  - Relancer weather_historical_init puis weather_daily_pipeline
+5. Beware of modifications:
+- If the historical.csv, /raw/ or /processed/ files are modified, you must:
+  - Delete historical_weather.csv(final data)
+  - Delete all files in /star_schema(final data)
+  - Relaunch weather_historical_init then weather_daily_pipeline
 
 
-6- Ordre de mise à jour recommandé :
+6- Recommended update order:
 weather_historical_init ➝ weather_daily_pipeline
 
 ---
 
 ## DIAGRAM
 
-#### **Schéma du modèle en étoile**
+#### **Star model diagram**
 
 <img src="./images/weather_diagram.png" alt="Diagram - Start schema" width="1000"/>
 
-- La table de faits : **fact_weather**
-- Les dimensions :
-  - **dim_city** : contient les villes
-  - **dim_date** : contient les dates
-  - **dim_conditions** : contient les types de conditions météorologiques
+- The fact table: **fact_weather**
+- Dimensions:
+  - **dim_city**: contains cities
+  - **dim_date**: contains dates
+  - **dim_conditions**: contains types of weather conditions
  
 ---
 
 ## EDA
-**init_EDA.ipynb** : analyse exploratoire avant traitement des données
+**init_EDA.ipynb**: exploratory analysis before data processing
 
-Elle permet de :
-- comprendre la structre des données
-- identifier des tendances et anomalies
-- prendre des décisions pour le pré-traitement
+It allows you to:
+- understand data structure
+- identify trends and anomalies
+- make pre-processing decisions
 
 
-**final_EDA.ipynb** : analyse exploratoire après traitement des données
+**final_EDA.ipynb**: exploratory analysis after data processing
 
-Elle permet de : 
-- valider la qualité des données traitées
-- identifier les meilleures périodes touristiques
-- générer des insights actionnables
+It enables you to:
+- validate the quality of processed data
+- identify the best tourist periods
+- generate actionable insights
 
 ---
 
 ## DASHBOARD
 
-#### **Previews** :
+#### **Previews**:
 
-Affichage des villes :
-<img src="./images/weather_dashboard1.png" alt="Dashboard - Introduction" width="1000"/>
+City display :
+<img src="./images/weather_dashboard1.png" alt="Dashboard - Main page" width="1000"/>
 
-Dans cette seconde page sont illustrés les indicateurs météorologiques suivants : 
-- les jours à température idéale(entre 20°C et 30° C)
-- les jours avec moins de pluie et de vent
-- les scores météo par mois
-<img src="./images/weather_dashboard2.png" alt="Dashboard - Content" width="1000"/>
+This second page illustrates the following weather indicators:
+- days with ideal temperatures (between 20°C and 30° C)
+- days with less rain and wind
+- weather scores by month
+<img src="./images/weather_dashboard2.png" alt="Dashboard - Content 1" width="1000"/>
+
+And finally, still using the same meteorological indicators, we compare the evolution of weather conditions between the two years 2020 and 2025:
+<img src="./images/weather_dashboard3.png" alt="Dashboard - Content 2" width="1000"/>
