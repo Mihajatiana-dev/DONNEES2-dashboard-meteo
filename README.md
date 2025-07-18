@@ -87,8 +87,8 @@ City display :
 <img src="./images/weather_dashboard1.png" alt="Dashboard - Main page" width="1000"/>
 
 This second page illustrates the following weather indicators:
-- days with ideal temperatures (between 20°C and 30° C)
 - days with less rain and wind
+- days with ideal temperatures (between 20°C and 30° C)
 - weather scores by month
 <img src="./images/weather_dashboard2.png" alt="Dashboard - Content 1" width="1000"/>
 
