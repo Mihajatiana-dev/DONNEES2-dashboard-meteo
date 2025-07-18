@@ -64,7 +64,7 @@ weather_historical_init ➝ weather_daily_pipeline
 ## EDA
 **init_EDA.ipynb** : analyse exploratoire avant traitement des données
 
-Elle m'a permis de :
+Elle permet de :
 - comprendre la structre des données
 - identifier des tendances et anomalies
 - prendre des décisions pour le pré-traitement
@@ -72,7 +72,7 @@ Elle m'a permis de :
 
 **final_EDA.ipynb** : analyse exploratoire après traitement des données
 
-Elle m'a permis de : 
+Elle permet de : 
 - valider la qualité des données traitées
 - identifier les meilleures périodes touristiques
 - générer des insights actionnables
@@ -83,6 +83,11 @@ Elle m'a permis de :
 
 #### **Previews** :
 
+Affichage des villes :
 <img src="./images/weather_dashboard1.png" alt="Dashboard - Introduction" width="1000"/>
 
+Dans cette seconde page sont illustrés les indicateurs météorologiques suivants : 
+- les jours à température idéale(entre 20°C et 30° C)
+- les jours avec moins de pluie et de vent
+- les scores météo par mois
 <img src="./images/weather_dashboard2.png" alt="Dashboard - Content" width="1000"/>
