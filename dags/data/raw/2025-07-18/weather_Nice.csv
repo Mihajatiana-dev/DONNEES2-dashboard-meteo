@@ -1,0 +1,2 @@
+ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
+Nice,2025-07-18 15:16:00,2025-07-18 12:00:00,26.2,23.68,30.77,67,0.4,2.8,10.0,scattered clouds,24

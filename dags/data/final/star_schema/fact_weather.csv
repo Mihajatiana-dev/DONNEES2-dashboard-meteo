@@ -10244,3 +10244,13 @@ city_id,date_id,condition_id,avg_temp,min_temp,max_temp,humidity,precipitation,w
 2,2025,4,24.3,17.3,33.26,54,8.2,3.1,10.0,True,True,False,True,70,False
 5,2025,4,25.3,23.72,31.09,66,0.0,3.9,9.4,True,True,True,True,100,True
 4,2025,1,24.7,18.99,33.09,56,11.1,2.1,10.0,True,True,False,True,70,False
+4,2025,1,24.7,18.99,33.09,56,11.1,2.1,10.0,True,True,False,True,70,False
+5,2025,4,25.3,23.72,31.09,66,0.0,3.9,9.4,True,True,True,True,100,True
+3,2025,1,26.4,23.95,29.56,63,0.0,2.5,10.0,True,True,True,True,100,True
+1,2025,4,24.5,17.17,32.54,57,1.0,3.5,10.0,True,True,True,True,100,True
+2,2025,4,24.3,17.3,33.26,54,8.2,3.1,10.0,True,True,False,True,70,False
+3,2026,12,26.2,23.68,30.77,67,0.4,2.8,10.0,True,True,True,True,100,True
+2,2026,12,22.7,15.84,30.94,56,19.8,4.0,10.0,True,True,False,True,70,False
+5,2026,1,25.0,22.47,29.22,70,0.7,4.0,10.0,True,True,True,True,100,True
+1,2026,2,22.6,16.78,30.36,63,8.7,3.4,9.9,True,True,False,True,70,False
+4,2026,4,23.4,17.48,32.58,66,27.2,1.9,9.7,True,True,False,True,70,False
