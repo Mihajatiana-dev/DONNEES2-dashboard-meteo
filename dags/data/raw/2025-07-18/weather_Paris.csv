@@ -1,2 +1,2 @@
 ville,date_extraction,date_observation,temperature_moy,temp_min,temp_max,humidite_moy,precipitation,vent_moyen,visibilite_moy,conditions,nb_intervalles
-Paris,2025-07-18 15:15:58,2025-07-18 12:00:00,22.7,15.84,30.94,56,19.8,4.0,10.0,scattered clouds,24
+Paris,2025-07-18 16:52:00,2025-07-18 12:00:00,22.4,15.82,30.96,57,12.8,3.8,9.9,clear sky,24
